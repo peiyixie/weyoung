@@ -44,11 +44,11 @@
     </navigator>
   </view>
 
-  <!-- New API -->
-  <!-- <view class="uploader" wx:if="{{loggedIn}}">
-    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
-      <text>New API</text>
-    </navigator>
-  </view> -->
+  <!-- Logout -->
+  <view class="uploader" wx:if="{{loggedIn}}">
+    <view class="uploader-text" bindtap="doLogout">
+      <text>Logout</text>
+    </view>
+  </view>
 
 </view>

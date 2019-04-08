@@ -38,6 +38,18 @@ Page({
     })
     
   },
+  doLogout: function(e){
+    this.setData({
+      avatarUrl: 'https://imgur.com/7B61FLl.png',
+      userInfo: {},
+      logged: false,
+      takeSession: false,
+      requestResult: '',
+      userID: '',
+      password: '',
+      loggedIn: false,
+    })
+  },
 
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
