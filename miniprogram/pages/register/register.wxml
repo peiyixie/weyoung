@@ -19,16 +19,12 @@
       <text class="black">Passwords do not match</text>
     </view>
 
-     <view class="list-item" wx:if="{{passOK && regUserID}}">
-      <button class="black" bindtap="doRegister">Register</button>
-    </view>
-
-    <view class="list-item" wx:if="{{!(passOK && regUserID)}}">
-      <button class="black">Register</button>
-    </view>
+    
 
   </view>
 
+  <button class="black" wx:if="{{passOK && regUserID}}" bindtap="doRegister">Register</button>
 
+      <button class="black" wx:if="{{!(passOK && regUserID)}}">Register</button>
 
 </view>
