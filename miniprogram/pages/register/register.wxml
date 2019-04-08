@@ -1,0 +1,34 @@
+<view class="container">
+
+  <view class="list">
+    <view class="list-item">
+      <text class="black">Register</text>
+    </view>
+    <view class="list-item">
+      <input placeholder="User ID" bindinput="bindIDInput" class="black">
+      </input>
+    </view>
+    <view class="list-item">
+      <input password placeholder="Password" bindinput="bindPassInput" class="black"></input>
+    </view>
+    <view class="list-item">
+      <input password placeholder="Confirm Password" bindinput="bindPassTwoInput" class="black"></input>
+    </view>
+
+    <view class="list-item" wx:if="{{!passOK}}">
+      <text class="black">Passwords do not match</text>
+    </view>
+
+     <view class="list-item" wx:if="{{passOK && regUserID}}">
+      <button class="black" bindtap="doRegister">Register</button>
+    </view>
+
+    <view class="list-item" wx:if="{{!(passOK && regUserID)}}">
+      <button class="black">Register</button>
+    </view>
+
+  </view>
+
+
+
+</view>

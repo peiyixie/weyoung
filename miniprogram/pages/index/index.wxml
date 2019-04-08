@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view wx:if="{{!loggedIn}}">
+
+    <image class="userinfo-avatar-center" style="background-image: url({{avatarUrl}})"></image>
+    <input class="uploader" placeholder="User ID" bindinput="bindIDInput" auto-focus />
+    <input class="uploader" password placeholder="Password" bindinput="bindPassInput" />
+
+    <view>
+      <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="uploader" bindtap="onGetUserInfo">Sign In</button>
+    </view>
+
+
+    <view>
+      <button class="uploader" bindtap="onRegister">Register</button>
+    </view>
+  </view>
+
+
+  <view class="userinfo" wx:if="{{loggedIn}}">
+    <image class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></image>
+    <view>
+      <text class="userinfo-nickname">Welcome, {{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+  <!-- Upload -->
+  <view class="uploader" wx:if="{{loggedIn}}">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>Upload</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+
+
+  <!-- Sign attendance -->
+  <view class="uploader" wx:if="{{loggedIn}}">
+    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
+      <text>Attendance</text>
+    </navigator>
+  </view>
+
+  <!-- New API -->
+  <!-- <view class="uploader" wx:if="{{loggedIn}}">
+    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
+      <text>New API</text>
+    </navigator>
+  </view> -->
+
+</view>

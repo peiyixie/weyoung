@@ -1,0 +1,16 @@
+<!--pages/storageConsole/storageConsole.wxml-->
+<view class="container">
+
+  <view class="list">
+    <view class="list-item" bindtap="testCgi">
+      <text class="black">Upload Successful</text>
+    </view>
+    
+    <view class="list-item">
+      <image class="image1" src="{{imagePath}}" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  
+
+</view>
