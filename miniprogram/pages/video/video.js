@@ -9,28 +9,28 @@ Page({
       "videId": "vid1",
       "title": "Healthcare Industry",
       "description": "#",
-      "content-url": "video1.mp4",
+      "content-url": "https://online.stanford.edu/courses/som-xcape110-strategies-debriefing-healthcare-scenarios",
       "thumb": "https://i.imgur.com/uxQcuqk.png"
     },
       {
         "videId": "vid2",
         "title": "Introduction to Python",
         "description": "#",
-        "content-url": "video2.mp4",
+        "content-url": "https://online.stanford.edu/courses/xfds113-introduction-python",
         "thumb": "https://i.imgur.com/QGCBlNO.png"
       },
       {
         "videId": "vid3",
         "title": "Entrepreneurship",
         "description": "#",
-        "content-url": "video3.mp4",
+        "content-url": "https://online.stanford.edu/programs/innovation-and-entrepreneurship-graduate-certificate",
         "thumb": "https://i.imgur.com/Orl6HO2.png"
       },      
       {
         "videId": "vid4",
         "title": "Cybersecurity",
         "description": "#",
-        "content-url": "video4.mp4",
+        "content-url": "https://online.stanford.edu/programs/stanford-rev-program",
         "thumb": "https://i.imgur.com/2zNtMqF.png"
       }
     
@@ -47,14 +47,6 @@ Page({
     })
     console.log(app.globalData)
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
@@ -65,39 +57,13 @@ Page({
     console.log(app.globalData)
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onPostTap: function (event) {
+    // 获取本页面的id
+    console.log(event.currentTarget)
+    var url = event.currentTarget.dataset.videoid;
+    wx.navigateTo({
+      url: './playback',
+    })
   }
+
 })

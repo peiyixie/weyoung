@@ -2,13 +2,14 @@
 <!-- <text>pages/video/video.wxml</text> -->
 <view class="container" wx:if="{{loggedIn}}">
   <block wx:for="{{video}}" wx:for-item="item">
-    <!-- <view catchtap='onPostTap' data-videoId='{{item.videoId}}'> -->
-    <view data-videoId='{{item.videoId}}'>
+    <view catchtap='onPostTap' data-url='{{item.content-url}}'>
+    <!-- <view data-videoId='{{item.content-url}}'> -->
       <text class="video-title">{{item.title}}</text>
       <image class="video-image"   src="{{item.thumb}}"></image>
     </view>
   </block>
 </view>
+
 
 
 <view class="container" wx:if="{{!loggedIn}}">
