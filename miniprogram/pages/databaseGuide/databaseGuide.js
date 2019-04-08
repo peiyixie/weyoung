@@ -172,12 +172,12 @@ Page({
           //   icon: 'none',
           //   title: '获取 openid 失败，请检查是否有部署 login 云函数',
           // })
-          console.log('[云函数] [login] 获取 openid 失败，请检查是否有部署云函数，错误信息：', err)
+          console.log('[Cloud] [login] failed to take openid ', err)
         }
       })
     } else {
       const callback = this.data.step !== 6 ? function() {} : function() {
-        console.group('数据库文档')
+        console.group('Docs')
         console.log('https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/database.html')
         console.groupEnd()
       }

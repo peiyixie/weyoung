@@ -1,0 +1,16 @@
+<!--pages/video/video.wxml-->
+<!-- <text>pages/video/video.wxml</text> -->
+<view class="container" wx:if="{{loggedIn}}">
+  <block wx:for="{{video}}" wx:for-item="item">
+    <!-- <view catchtap='onPostTap' data-videoId='{{item.videoId}}'> -->
+    <view data-videoId='{{item.videoId}}'>
+      <text class="video-title">{{item.title}}</text>
+      <image class="video-image"   src="{{item.thumb}}"></image>
+    </view>
+  </block>
+</view>
+
+
+<view class="container" wx:if="{{!loggedIn}}">
+  <text> Login to view videos. </text>
+</view>

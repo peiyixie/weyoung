@@ -49,6 +49,7 @@ Page({
       password: '',
       loggedIn: false,
     })
+    app.globalData.loggedIn = false
   },
 
   onGetUserInfo: function(e) {
@@ -94,6 +95,8 @@ Page({
             loggedIn: true,
           })
           console.log('[DB] [Query] Success: ', res)
+          app.globalData.loggedIn = true
+
         }else{
           wx.showToast({
             icon: 'none',
@@ -111,12 +114,6 @@ Page({
       }
     })
 
-  },
-
-  onLogin: function(e){
-      this.setData({
-        loggedIn: true
-      })
   },
 
   onGetOpenid: function() {
