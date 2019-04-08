@@ -4,7 +4,7 @@
   <view class="guide" wx:if="{{step === 3}}">
     
     <button type="default" bindtap="onAdd">Take Attendance</button>
-    <text class="p" wx:if="{{counterId}}">Your attendance has been taken.</text>
+    
 
   </view>
 
