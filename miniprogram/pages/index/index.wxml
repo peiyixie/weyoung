@@ -8,13 +8,13 @@
     <input class="uploader" placeholder="User ID" bindinput="bindIDInput" auto-focus />
     <input class="uploader" password placeholder="Password" bindinput="bindPassInput" />
 
-    <view>
-      <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="uploader" bindtap="onGetUserInfo">Sign In</button>
+    <view > 
+      <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" bindtap="onGetUserInfo">Sign In</button>
     </view>
 
 
-    <view>
-      <button class="uploader" bindtap="onRegister">Register</button>
+    <view >
+      <button  bindtap="onRegister">Register</button>
     </view>
   </view>
 
