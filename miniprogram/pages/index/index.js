@@ -51,7 +51,38 @@ Page({
     })
     app.globalData.loggedIn = false
   },
+  onGetUserInfoReg: function (e) {
+    if (!this.logged && e.detail.userInfo) {
+      this.setData({
+        logged: true,
+        avatarUrl: e.detail.userInfo.avatarUrl,
+        userInfo: e.detail.userInfo
+      })
+    }
 
+    if (!this.data.openid) {
+      wx.cloud.callFunction({
+        name: 'login',
+        data: {},
+        success: res => {
+          app.globalData.openid = res.result.openid
+          this.setData({
+            step: 2,
+            openid: res.result.openid
+          })
+          console.log(res.result)
+
+        },
+        fail: err => {
+          // wx.showToast({
+          //   icon: 'none',
+          //   title: '获取 openid 失败，请检查是否有部署 login 云函数',
+          // })
+          console.log('[云函数] [login] 获取 openid 失败，请检查是否有部署云函数，错误信息：', err)
+        }
+      })
+    }
+  },
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
       this.setData({

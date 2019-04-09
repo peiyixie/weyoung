@@ -51,6 +51,11 @@ Page({
           counterId: res1._id,
           timestamp: res1.timestamp
         })
+
+        wx.navigateBack({
+          delta: 1
+        })
+
         wx.showToast({
           title: 'Success',
         })

@@ -9,7 +9,8 @@ Page({
     regPassword: '',
     regConfirmPassword: '',
     openid: '',
-    passOK: true
+    passOK: true,
+    finished: false
 
   },
 
@@ -87,10 +88,16 @@ Page({
               password: this.data.regConfirmPassword
             },
             success: res1 => {
+
+              wx.navigateBack({
+                delta: 1
+              })
+              
               wx.showToast({
                 title: 'Success',
               })
               console.log('[DB] [New] Success _id: ', res1._id)
+              
             },
             fail: err => {
               wx.showToast({

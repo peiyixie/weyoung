@@ -14,7 +14,7 @@
 
 
     <view >
-      <button  bindtap="onRegister">Register</button>
+      <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfoReg" bindtap="onRegister">Register</button>
     </view>
   </view>
 
